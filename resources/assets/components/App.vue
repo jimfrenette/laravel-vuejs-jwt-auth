@@ -4,6 +4,9 @@
             <nav>
                 <ul class="list-inline">
                     <li><a v-link="{ name: 'home' }">Home</a></li>
+                    <li class="pull-right">
+                        <a v-link="{ name: 'register' }">Register</a>
+                    </li>
                 </ul>
             </nav>
         </div>
