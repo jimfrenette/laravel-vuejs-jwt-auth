@@ -7,15 +7,14 @@ export default {
         profile: null
     },
     register(context, name, email, password) {
-        Vue.http({
-            url: 'api/register',
-            method: 'POST',
-            data: {
+        Vue.http.post(
+            'api/register',
+            {
                 name: name,
                 email: email,
-                password: password,
+                password: password
             }
-        }).then(response => {
+        ).then(response => {
             context.success = true
         }, response => {
             context.response = response.data

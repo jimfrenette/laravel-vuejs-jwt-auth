@@ -41,8 +41,8 @@ export default {
     },
     methods: {
         register(event) {
-            event.preventDefault()
-            auth.register(this, this.name, this.email, this.password)
+            event.preventDefault();
+            auth.register(this, this.name, this.email, this.password);
         }
     }
 }
