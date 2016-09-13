@@ -7,6 +7,9 @@
                     <li class="pull-right">
                         <a v-link="{ name: 'register' }">Register</a>
                     </li>
+                    <li class="pull-right">
+                        <a v-link="{ name: 'signin' }">Sign in</a>
+                    </li>
                 </ul>
             </nav>
         </div>

@@ -20,4 +20,14 @@ Route::group(['middleware' => ['api']], function () {
         'uses' => 'Auth\AuthController@register',
     ]);
 
+    Route::post('/api/signin', [
+        'uses' => 'Auth\AuthController@signin',
+    ]);
+
+    Route::group(['middleware' => 'jwt.auth'], function () {
+        Route::get('/user', [
+            'uses' => 'UserController@index',
+        ]);
+    });
+
 });
