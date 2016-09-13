@@ -6,6 +6,16 @@ export default {
         authenticated: false,
         profile: null
     },
+    check() {
+        if (localStorage.getItem('id_token') !== null) {
+            Vue.http.get(
+                'api/user',
+            ).then(response => {
+                this.user.authenticated = true
+                this.user.profile = response.data.data
+            })
+        }
+    },
     register(context, name, email, password) {
         Vue.http.post(
             'api/register',
