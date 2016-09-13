@@ -4,11 +4,14 @@
             <nav>
                 <ul class="list-inline">
                     <li><a v-link="{ name: 'home' }">Home</a></li>
-                    <li class="pull-right">
+                    <li class="pull-right" v-if="!auth.user.authenticated">
                         <a v-link="{ name: 'register' }">Register</a>
                     </li>
-                    <li class="pull-right">
+                    <li class="pull-right" v-if="!auth.user.authenticated">
                         <a v-link="{ name: 'signin' }">Sign in</a>
+                    </li>
+                    <li class="pull-right" v-if="auth.user.authenticated">
+                        <a href="#" v-on:click="signout">Sign out</a>
                     </li>
                     <li class="pull-right" v-if="auth.user.authenticated">
                         Hi, {{ auth.user.profile.name }}

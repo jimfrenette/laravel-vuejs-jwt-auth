@@ -4,6 +4,7 @@ var VueResource = require('vue-resource');
 
 import App from '../components/App.vue';
 import Home from '../components/Home.vue';
+import Dashboard from '../components/Dashboard.vue';
 import Register from '../components/Register.vue';
 import SignIn from '../components/SignIn.vue';
 
@@ -21,6 +22,10 @@ router.map({
     '/': {
         name: 'home',
         component: Home
+    },
+    '/dashboard': {
+        name: 'dashboard',
+        component: Dashboard
     },
     '/register': {
         name: 'register',

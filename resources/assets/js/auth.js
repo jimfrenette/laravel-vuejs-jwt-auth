@@ -47,10 +47,19 @@ export default {
             this.user.profile = response.data.data
 
             router.go({
-                name: 'home'
+                name: 'dashboard'
             })
         }, response => {
             context.error = true
+        })
+    },
+    signout() {
+        localStorage.removeItem('id_token')
+        this.user.authenticated = false
+        this.user.profile = null
+
+        router.go({
+            name: 'home'
         })
     }
 }
