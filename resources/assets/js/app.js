@@ -3,10 +3,10 @@ var VueRouter = require('vue-router');
 var VueResource = require('vue-resource');
 
 import App from '../components/App.vue';
-import Home from '../components/Home.vue';
 import Dashboard from '../components/Dashboard.vue';
+import Home from '../components/Home.vue';
 import Register from '../components/Register.vue';
-import SignIn from '../components/SignIn.vue';
+import Signin from '../components/Signin.vue';
 
 Vue.use(VueRouter);
 Vue.use(VueResource);
@@ -33,7 +33,7 @@ router.map({
     },
     '/signin': {
         name: 'signin',
-        component: SignIn
+        component: Signin
     },
 });
 
