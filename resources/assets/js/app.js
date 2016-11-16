@@ -8,10 +8,6 @@ import Home from '../components/Home.vue';
 import Register from '../components/Register.vue';
 import Signin from '../components/Signin.vue';
 
-/** http://router.vuejs.org/en/advanced/lazy-loading.html */
-//const Register = r => require.ensure([], () => r(require('../components/Register.vue')), 'group-auth')
-//const Register = resolve => require(['../components/Register.vue'], resolve)
-
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
