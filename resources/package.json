@@ -1,7 +1,7 @@
 {
   "name": "resources",
   "description": "A Vue.js project",
-  "author": "jimfrenette <jimfrenette@yahoo.com>",
+  "author": "jimfrenette.com",
   "private": true,
   "scripts": {
     "dev": "cross-env NODE_ENV=development webpack-dev-server --port 3000 --open --inline --hot",
