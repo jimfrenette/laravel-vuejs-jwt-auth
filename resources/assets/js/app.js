@@ -8,6 +8,10 @@ import Home from '../components/Home.vue';
 import Register from '../components/Register.vue';
 import Signin from '../components/Signin.vue';
 
+/** http://router.vuejs.org/en/advanced/lazy-loading.html */
+//const Register = r => require.ensure([], () => r(require('../components/Register.vue')), 'group-auth')
+//const Register = resolve => require(['../components/Register.vue'], resolve)
+
 Vue.use(VueRouter);
 Vue.use(VueResource);
 
@@ -16,25 +20,35 @@ Vue.http.headers.common['Authorization'] = 'Bearer ' + localStorage.getItem('id_
 Vue.http.options.root = 'http://laravel.dev:8080';
 
 export default Vue;
-export var router = new VueRouter;
 
-router.map({
-    '/': {
-        name: 'home',
-        component: Home
-    },
-    '/dashboard': {
-        name: 'dashboard',
-        component: Dashboard
-    },
-    '/register': {
-        name: 'register',
-        component: Register
-    },
-    '/signin': {
-        name: 'signin',
-        component: Signin
-    },
+export var router = new VueRouter({
+    routes: [
+        {
+            path: '/',
+            name: 'home',
+            component: Home
+        },
+        {
+            path: '/dashboard',
+            name: 'dashboard',
+            component: Dashboard
+        },
+        {
+            path: '/register',
+            name: 'register',
+            component: Register
+        },
+        {
+            path: '/signin',
+            name: 'signin',
+            component: Signin
+        }
+    ]
 });
 
-router.start(App, '#app');
+new Vue({
+    el: '#app',
+    router: router,
+    render: app => app(App)
+});
+

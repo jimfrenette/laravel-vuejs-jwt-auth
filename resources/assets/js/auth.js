@@ -46,7 +46,7 @@ export default {
             this.user.authenticated = true
             this.user.profile = response.data.data
 
-            router.go({
+            router.push({
                 name: 'dashboard'
             })
         }, response => {
@@ -58,7 +58,7 @@ export default {
         this.user.authenticated = false
         this.user.profile = null
 
-        router.go({
+        router.push({
             name: 'home'
         })
     }

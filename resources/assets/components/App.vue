@@ -3,15 +3,19 @@
         <div class="panel-heading">
             <nav>
                 <ul class="list-inline">
-                    <li><a v-link="{ name: 'home' }">Home</a></li>
-                    <li class="pull-right" v-if="!auth.user.authenticated">
-                        <a v-link="{ name: 'register' }">Register</a>
+                    <li>
+                        <router-link :to="{ name: 'home' }">Home</router-link>
                     </li>
                     <li class="pull-right" v-if="!auth.user.authenticated">
-                        <a v-link="{ name: 'signin' }">Sign in</a>
+                        <router-link :to="{ name: 'register' }">Register</router-link>
+                    </li>
+                    <li class="pull-right" v-if="!auth.user.authenticated">
+                        <router-link :to="{ name: 'signin' }">Sign in</router-link>
                     </li>
                     <li class="pull-right" v-if="auth.user.authenticated">
-                        <a href="#" v-on:click="signout">Sign out</a>
+                        <router-link to="#">
+                            <span v-on:click="signout">Sign out</span>
+                        </router-link>
                     </li>
                     <li class="pull-right" v-if="auth.user.authenticated">
                         Hi, {{ auth.user.profile.name }}

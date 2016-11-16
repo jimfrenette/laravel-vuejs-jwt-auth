@@ -11,14 +11,14 @@ var elixir = require('laravel-elixir');
  |
  */
 
-// elixir(function(mix) {
-//     mix.sass('app.scss');
-// });
-
-
-require('laravel-elixir-vueify');
-
 elixir(function(mix) {
-    mix.browserify('app.js');
-    mix.sass('app.scss');
+    //mix.webpack('app.js');
+    mix.browserSync(
+    {
+        proxy: "laravel.dev:8080",
+        logConnections	: false,
+        reloadOnRestart : false,
+        notify 			: false
+    });
+    //mix.sass('app.scss');
 });
