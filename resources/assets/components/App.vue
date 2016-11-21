@@ -13,9 +13,7 @@
                         <router-link :to="{ name: 'signin' }">Sign in</router-link>
                     </li>
                     <li class="pull-right" v-if="auth.user.authenticated">
-                        <router-link to="#">
-                            <span v-on:click="signout">Sign out</span>
-                        </router-link>
+                        <a href="javascript:void(0)" v-on:click="signout">Sign out</a>
                     </li>
                     <li class="pull-right" v-if="auth.user.authenticated">
                         Hi, {{ auth.user.profile.name }}
