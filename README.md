@@ -16,3 +16,13 @@ Versions that were used in this tutorial
 * Webpack v2.1.0-beta.25
 
 Refer to the resources/package.json for more info
+
+## TODO
+
+### Refresh Tokens
+
+The current user's access token is refreshed. This case can happen in the following conditions:
+
+* The access token expires: this is a common situation. The refresh token is used to get a new valid set of tokens.
+* The user changes his password: Server issues new refresh tokens and renders the old tokens expired.
+* The user re-authenticates: some actions require that the user's credentials are recently issued; such actions include deleting an account, setting a primary email address, and changing a password. Instead of signing out the user and then signing in the user again, get new credentials from the     user, and pass the new credentials to the reauthenticate method of the User object.
