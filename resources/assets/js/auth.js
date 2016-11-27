@@ -7,9 +7,10 @@ export default {
         profile: null
     },
     check() {
-        if (localStorage.getItem('id_token') !== null) {
-            Vue.http.get(
-                'api/user',
+        token = localStorage.getItem('id_token')
+        if (token !== null) {
+            this.$http.get(
+                'api/user?token=' + token,
             ).then(response => {
                 this.user.authenticated = true
                 this.user.profile = response.data.data
