@@ -41,8 +41,10 @@ export default {
                 auth.signout()
             }
         },
-        ready() {
-            auth.check()
+        mounted: function () {
+            this.$nextTick(function () {
+                auth.check()
+            })
         }
 }
 </script>
