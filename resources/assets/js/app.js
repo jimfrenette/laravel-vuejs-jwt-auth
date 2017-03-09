@@ -1,7 +1,6 @@
-var Vue = require('vue');
-var VueRouter = require('vue-router');
-var VueResource = require('vue-resource');
-
+import Vue from 'vue';
+import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import App from '../components/App.vue';
 import Dashboard from '../components/Dashboard.vue';
 import Home from '../components/Home.vue';
@@ -47,4 +46,3 @@ new Vue({
     router: router,
     render: app => app(App)
 });
-

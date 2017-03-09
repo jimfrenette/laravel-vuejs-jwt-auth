@@ -7,7 +7,7 @@ export default {
         profile: null
     },
     check() {
-        token = localStorage.getItem('id_token')
+        let token = localStorage.getItem('id_token')
         if (token !== null) {
             this.$http.get(
                 'api/user?token=' + token,
