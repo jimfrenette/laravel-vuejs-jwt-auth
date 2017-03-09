@@ -9,7 +9,7 @@ export default {
     check() {
         let token = localStorage.getItem('id_token')
         if (token !== null) {
-            this.$http.get(
+            Vue.http.get(
                 'api/user?token=' + token,
             ).then(response => {
                 this.user.authenticated = true
